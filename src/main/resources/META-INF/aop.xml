@@ -1,0 +1,5 @@
+<aspectj>
+    <weaver>
+        <include within="maven.app..*"/>
+    </weaver>
+</aspectj>
