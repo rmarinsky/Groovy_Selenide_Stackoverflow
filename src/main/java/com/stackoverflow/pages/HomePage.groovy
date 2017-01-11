@@ -1,17 +1,17 @@
 package com.stackoverflow.pages
 
 import com.stackoverflow.Locators.HomePageLocators
+import com.stackoverflow.utils.PropertiesReader
 import ru.yandex.qatools.allure.annotations.Step
 
 import static com.codeborne.selenide.Selenide.$
 import static com.codeborne.selenide.Selenide.open
-import static com.stackoverflow.utils.PropertiesReader.loadProperty
 
 class HomePage extends HomePageLocators {
 
     @Step
     navigateToMainPage() {
-        open(loadProperty("URL"))
+        open(SITE_URL)
         return this
     }
 

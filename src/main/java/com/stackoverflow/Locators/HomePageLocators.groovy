@@ -1,5 +1,7 @@
 package com.stackoverflow.Locators
 
+import com.stackoverflow.utils.PropertiesReader
+
 class HomePageLocators {
 
     protected static final String LOGIN_LINK_AT_THE_TOP = ".topbar-menu-links a:nth-child(2)"
@@ -7,5 +9,6 @@ class HomePageLocators {
     protected static
     final String TOP_BAR_ICON = ".topbar-icon.icon-site-switcher.yes-hover.js-site-switcher-button.js-gps-track"
     protected static final String LOGOUT_LINK = ".related-links .js-gps-track:nth-child(2)"
+    protected static final String SITE_URL = PropertiesReader.config.SITE_URL
 
 }

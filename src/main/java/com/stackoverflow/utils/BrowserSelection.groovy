@@ -10,7 +10,7 @@ class BrowserSelection {
             //TODO
         } else if (browser == "Chrome") {
             Configuration.browser = "Chrome"
-            System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\drivers\\chromedriver.exe")
+            System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/mac/chromedriver")
         } else if (browser == "IE") {
             //TODO
         } else if (browser == "Safari") {
