@@ -14,9 +14,9 @@ class ScreenshotOnFailure extends TestListenerAdapter {
     }
 
     @Attachment(value = "{0}", type = "image/png")
-    byte[] attachBrowserScreenshot() throws IOException {
-        File screenshot = Screenshots.takeScreenShotAsFile();
-        return Files.toByteArray(screenshot);
+    static attachBrowserScreenshot() throws IOException {
+        File screenshot = Screenshots.getLastScreenshot()
+        return Files.toByteArray(screenshot)
     }
 
 }

@@ -1,47 +1,46 @@
 package com.stackoverflow.pages
 
-import com.stackoverflow.Locators.HomePageLocators
-import com.stackoverflow.utils.PropertiesReader
+import com.codeborne.selenide.Condition
 import ru.yandex.qatools.allure.annotations.Step
 
 import static com.codeborne.selenide.Selenide.$
 import static com.codeborne.selenide.Selenide.open
 
-class HomePage extends HomePageLocators {
+class HomePage {
 
     @Step
-    navigateToMainPage() {
-        open(SITE_URL)
+    openHomePage() {
+        open("/")
         return this
     }
 
     @Step
-    clickOnLoginLink() {
-        $(LOGIN_LINK_AT_THE_TOP).click()
+    static clickOnLoginLink() {
+        $(".topbar-menu-links a:nth-child(2)").click()
         return new LoginPage()
     }
 
     @Step
-    checkThatUserAvatarIsPresent() {
-        assert $(AVATAR_IMAGE).isDisplayed(): "something is wrong, avatar is not displayed"
+    avatarShouldBeVisible() {
+        $(".avatar-me.js-avatar-me").shouldBe(Condition.visible)
         return this
     }
 
     @Step
     clickOnTopBarIcon() {
-        $(TOP_BAR_ICON).click()
+        $(".topbar-icon.icon-site-switcher.yes-hover.js-site-switcher-button.js-gps-track").click()
         return this
     }
 
     @Step
-    clickOnLogOutLinkIntoDropDown() {
-        $(LOGOUT_LINK).click()
+    static clickOnLogOutLink() {
+        $(".related-links .js-gps-track:nth-child(2)").click()
         return new LogOutPage()
     }
 
     @Step
-    checkThatLoginLinkIsPresent() {
-        assert $(LOGIN_LINK_AT_THE_TOP).isDisplayed(): "something is wrong, Login link is not displayed"
+    linkLoginShouldBeVisible() {
+        $(".topbar-menu-links a:nth-child(2)").shouldBe(Condition.visible)
         return this
     }
 
